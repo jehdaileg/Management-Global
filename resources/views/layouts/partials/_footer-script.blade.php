@@ -3,3 +3,6 @@
   <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.css') }}"></script>
 
   <script src="{{ asset('admin/dist/js/adminlte.min.css') }}"></script>
+
+
+  @stack('scripts')

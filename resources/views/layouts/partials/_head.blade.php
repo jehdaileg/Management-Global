@@ -8,3 +8,6 @@
 
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
+
+
+  @stack('css')
