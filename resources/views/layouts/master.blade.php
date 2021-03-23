@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+
  @include('layouts.partials._head')
 
 </head>
@@ -68,7 +68,12 @@
       
       <!-- Sidebar -->
 
+
       @include('layouts.partials._sidebar')
+
+
+
+      
       
       <!-- /.sidebar -->
     </aside>
@@ -78,8 +83,13 @@
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
+          
+              <!-- include the laracasts/flash messages -->
+              @include('flash::message')
+
           <div class="row mb-2">
             <div class="col-sm-6">
+
               <h1 class="m-0 text-dark">Tableau de Bord</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
@@ -96,7 +106,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-          
+
           @yield('content')
           
           
@@ -105,7 +115,7 @@
       </div>
       <!-- /.content-wrapper -->
       <footer class="main-footer">
-        
+
         @include('layouts.partials._footer')
 
       </footer>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,9 @@ Route::get('/draft',function() {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 	return view('dashboard');
 })->name('dashboard');
+
+
+
+//GESTION CATEGORY 
+
+Route::resource('/categories', CategoryController::class);
