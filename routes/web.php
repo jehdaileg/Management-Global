@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,12 +38,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
-	     //GESTION CATEGORY 
 
+	     //GESTION CATEGORY 
 	Route::resource('/categories', CategoryController::class);
+
+	    // GESTION BRAND 
+	Route::resource('/brands', BrandController::class);
+
 
 
 });
+
 
 
 
