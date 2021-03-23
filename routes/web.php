@@ -33,7 +33,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+//Groupes des routes dont l'authentification est obligatoire 
 
-//GESTION CATEGORY 
+Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
-Route::resource('/categories', CategoryController::class);
+	     //GESTION CATEGORY 
+
+	Route::resource('/categories', CategoryController::class);
+
+
+});
+
+
+

@@ -7,10 +7,9 @@
 	<!-- general form elements -->
 	<div class="card card-default">
 		<div class="card-header">
-			<h3 class="card-title">Liste des Categories</h3>
+			<h3 class="card-title">Liste des Categories</h3><br>
 
-			
-
+			<a href="{{ route('categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter</a>
 
 		</div>
 
