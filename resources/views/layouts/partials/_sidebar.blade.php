@@ -3,7 +3,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
          
           <div class="info">
-            <a href="#" class="d-block">{{ Auth::user()->name ?? 'Jehdai' }}</a>
+            <a href="#" class="d-block"><span class="text-green">@</span>{{ Auth::user()->name ?? 'Jehdai' }} </a>
           </div>
         </div>
 
@@ -46,7 +46,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('products.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Products</p>
                 </a>

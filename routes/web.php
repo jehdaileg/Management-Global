@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,11 +46,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 	   //GESTION SIZE 
 	Route::resource('/sizes', SizeController::class);
 
-	Route::get('/draft',function() {
+	  //GESTION PRODUCT 
+	Route::resource('/products', ProductController::class);
 
-	return view('draft');
-
-});
 
 
 
