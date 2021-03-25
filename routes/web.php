@@ -24,11 +24,7 @@ Route::get('/template', function(){
 	return view('layouts.master');
 });
 
-Route::get('/draft',function() {
 
-	return view('draft');
-
-});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 	return view('dashboard');
@@ -48,6 +44,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
 	   //GESTION SIZE 
 	Route::resource('/sizes', SizeController::class);
+
+	Route::get('/draft',function() {
+
+	return view('draft');
+
+});
+
+
 
 
 

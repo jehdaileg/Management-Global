@@ -1,5 +1,7 @@
   <script src="{{ asset('js/jquery.js') }}"></script>
 
+  <script src="{{ asset('js/app.js') }}"></script>
+  
   <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.css') }}"></script>
@@ -23,29 +25,32 @@
 
 
 
-  <!-- AdminLTE App -->
 
-  <script>
+  <!-- AdminLTE App
+<script src="js/app.js"></script>
+-->
 
-  	$('div-alert').not('.alert-important').delay(3000).fadeOut(350);
+<script>
 
-  	$('.datatable').DataTable({
+ $('div-alert').not('.alert-important').delay(3000).fadeOut(350);
 
-  		"responsive" :true,
+ $('.datatable').DataTable({
 
-  		"autowidth" :false
+  "responsive" :true,
 
-
-  	});
-
-
-  	$('.sa-delete').on('click', function(e){
-
-  		
-  		e.preventDefault();
+  "autowidth" :false
 
 
-  		let form_id = $(this).data('form-id');
+});
+
+
+ $('.sa-delete').on('click', function(e){
+
+
+  e.preventDefault();
+
+
+  let form_id = $(this).data('form-id');
 
  		//alert("id du formulaire" +form_id);
 
@@ -74,9 +79,6 @@
 
 
  	});
-
-    
-
 
 
 
