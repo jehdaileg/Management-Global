@@ -31,6 +31,11 @@ Vue.component('add-product-component', require('./components/products/ProductAdd
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import store from './store';
+
+
 const app = new Vue({
     el: '#app',
+
+    store
 });
