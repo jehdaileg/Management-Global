@@ -38,8 +38,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
 
 	     //GESTION CATEGORY 
+	        //--for laravel 
 	Route::resource('/categories', CategoryController::class);
+	        //--for vuejs 
+	Route::get('/api/categories', [CategoryController::class, 'getCategoriesJson']);
 
+	
 	    // GESTION BRAND 
 	Route::resource('/brands', BrandController::class);
 

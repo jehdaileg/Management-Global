@@ -5,11 +5,11 @@ import getters from './getters';
 import mutations from './mutations';
 
 
+
 const state = {
 
 	categories : {}
 }
-
 
 
 export default {
@@ -20,7 +20,5 @@ export default {
 
 	getters,
 
-	mutations
-
-
+	mutations 
 }
