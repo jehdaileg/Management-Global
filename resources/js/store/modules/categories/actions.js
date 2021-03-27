@@ -2,12 +2,13 @@ import * as actions from '../../action-types'
 
 import * as mutations from '../../mutation-types'
 
+
 import Axios from 'axios'
 
 
 export default {
 
-	[actions.GET_CATEGORIES]({ commit }){
+	[actions.GET_CATEGORIES]({ commit }) {
 
 		Axios.get('/api/categories')
 
@@ -17,12 +18,6 @@ export default {
 
 		     		commit(mutations.SET_CATEGORIES, res.data.data)
 		     	}
-
-
 		     })
 	}
 }
-
-
-
-
