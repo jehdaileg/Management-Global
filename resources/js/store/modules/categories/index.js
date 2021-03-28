@@ -8,7 +8,7 @@ import mutations from './mutations'
 
 const state = {
 
-	categories : {}
+	categories : []
 }
 
 

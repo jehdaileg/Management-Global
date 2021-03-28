@@ -8,22 +8,14 @@
     <!-- form start -->
     <form role="form" action="" method="">
 
-
-
       <div class="card-body">
         <div class="form-group">
 
+          <label><strong>Categorie:</strong></label>
 
-         <label><strong>Nom Categorie:</strong></label>
-
-         <select class="form-control" v-model="form.category_id">
-
-          <option v-for="(item, index) in categories" :key="index" :value="item.id">{{ item.name }}</option>
-
-        </select>
+        <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder : 'Selectionner une categorie' }"></Select2>
 
       </div>
-
 
     </div>
     <!-- /.card-body -->
@@ -46,8 +38,17 @@ import * as actions from '../../store/action-types'
 
 import { mapGetters } from 'vuex'
 
+import Select2 from 'v-select2-component'
+
 export default {
 
+
+  components : {
+
+    Select2
+
+
+  },
 
   data() {
 

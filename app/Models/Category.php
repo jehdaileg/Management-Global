@@ -10,7 +10,19 @@ use App\Http\Controllers\CategoryController;
 
 class Category extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $guarded = [];
+	protected $guarded = [];
+
+	protected $appends = ['text'];
+
+	public function getTextAttribute()
+	{
+
+		return $this->name;
+		
+	}
+
+
+
 }
