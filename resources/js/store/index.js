@@ -8,14 +8,19 @@ Vue.use(Vuex);
 
 //Modules to Import 
 
-import categories from './modules/categories';
+import categories from './modules/categories';  //categories module
+
+import brands from './modules/brands'  //brands module 
+
 
 
 export default new Vuex.Store({
 
 	modules : {
 
-		categories
+		categories,
+
+		brands
 	}
 })
 

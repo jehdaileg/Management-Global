@@ -13,7 +13,19 @@
 
           <label><strong>Categorie:</strong></label>
 
-        <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder : 'Selectionner une categorie' }"></Select2>
+          <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder : 'Selectionner une categorie' }"></Select2>
+
+        </div>
+
+      </div>
+
+      <div class="card-body">
+
+       <div class="form-group">
+
+        <label><strong>Brand:</strong></label>
+
+        <Select2 v-model="form.brand_id" :options="brands" :settings="{ placeholder : 'Selectionner une brand' }"></Select2>
 
       </div>
 
@@ -56,7 +68,9 @@ export default {
 
       form : {
 
-        category_id : 0
+        category_id : 0,
+
+        brand_id : 0
 
 
       }
@@ -69,7 +83,9 @@ export default {
 
     ...mapGetters({
 
-      'categories' : 'getCategories'
+      'categories' : 'getCategories',
+
+      'brands' : 'getBrands'
 
 
     })
@@ -79,8 +95,11 @@ export default {
 
   mounted() {
 
-   store.dispatch(actions.GET_CATEGORIES)
- }
+    store.dispatch(actions.GET_CATEGORIES),
+
+    store.dispatch(actions.GET_BRANDS)
+
+  }
 
 
 

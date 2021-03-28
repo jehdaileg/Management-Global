@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BrandController extends Controller
 {
@@ -131,5 +132,22 @@ class BrandController extends Controller
         flash('Brand Supprime avec Success')->success();
 
         return back();
+    }
+
+
+
+    //Request AJAX for getting brands in Jsob format 
+
+    public function getBrandsJson()
+    {
+        $brands = Brand::all();
+
+        return response()->json([
+
+            'success'=>true,
+
+            'data'=>$brands
+
+        ], Response::HTTP_OK);
     }
 }
