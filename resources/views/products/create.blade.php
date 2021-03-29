@@ -6,7 +6,13 @@
 	
             <!-- general form elements -->
             
-            <add-product-component></add-product-component>
+          <div class="container-fluid">
+          	
+          	
+          		  <add-product-component></add-product-component>
+          
+
+          </div>
 
             <!-- /.card -->
       
