@@ -7,7 +7,7 @@ import mutations from './mutations'
 
 const state = {
 
-	brands : {}
+	brands : []
 }
 
 

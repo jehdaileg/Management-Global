@@ -1,6 +1,6 @@
 <template>
 
-	<div class="card card-primary">
+	<div class="card card-primary col-md-6">
     <div class="card-header">
       <h3 class="card-title">Creation Produit</h3>
     </div>
@@ -11,32 +11,104 @@
       <div class="card-body">
         <div class="form-group">
 
-          <label><strong>Categorie:</strong></label>
+          <label><strong>Categorie:</strong> <span class="text-danger">*</span></label>
 
           <Select2 v-model="form.category_id" :options="categories" :settings="{ placeholder : 'Selectionner une categorie' }"></Select2>
 
         </div>
 
+
+
+
+        <div class="form-group">
+
+          <label><strong>Brand:</strong> <span class="text-danger">*</span></label>
+
+          <Select2 v-model="form.brand_id" :options="brands" :settings="{ placeholder : 'Selectionner une brand' }"></Select2>
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>SKU:</strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.sku" class="form-control" placeholder="Entrer Sku... ">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Nom:</strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.name" class="form-control" placeholder="Entrer nom...">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Image:</strong> <span class="text-danger">*</span></label>
+
+          <input type="file" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Cost Price ($) :</strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.cost_price" class="form-control" placeholder="Entrer cost price... ">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Retail Price ($) :</strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.retail_price" class="form-control" placeholder="Entrer retail price...">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Annee :</strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.year" class="form-control" placeholder="Entrer Annee Ex[2021]...">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Description: </strong> <span class="text-danger">*</span></label>
+
+          <input type="text" v-model="form.description" class="form-control" placeholder="Entrer description Max[250]... ">
+
+        </div>
+
+        <div class="form-group">
+
+          <label><strong>Status:</strong> <span class="text-danger">*</span></label>
+
+          <select class="form-control" v-model="form.status">
+
+            <option value=1>Active</option>
+            <option value=0>Inactive</option>
+
+          </select>
+
+
+        </div>
+
+
+
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+
       </div>
-
-      <div class="card-body">
-
-       <div class="form-group">
-
-        <label><strong>Brand:</strong></label>
-
-        <Select2 v-model="form.brand_id" :options="brands" :settings="{ placeholder : 'Selectionner une brand' }"></Select2>
-
-      </div>
-
-    </div>
-    <!-- /.card-body -->
-
-    <div class="card-footer">
-      <button type="submit" class="btn btn-primary">Enregistrer</button>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 
 
 
@@ -70,7 +142,23 @@ export default {
 
         category_id : 0,
 
-        brand_id : 0
+        brand_id : 0,
+
+        sku : '',
+
+        name : '',
+
+        image : '',
+
+        cost_price : 0,
+
+        retail_price : 0,
+
+        year : '',
+
+        description : '',
+
+        status : 1
 
 
       }
