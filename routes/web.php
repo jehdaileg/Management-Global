@@ -51,7 +51,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 	Route::get('/api/brands', [BrandController::class, 'getBrandsJson']);
 
 	   //GESTION SIZE 
+	        //--for laravel
 	Route::resource('/sizes', SizeController::class);
+			//--for vuejs
+	Route::get('/api/sizes', [SizeController::class, 'getSizesJson']);
 
 	  //GESTION PRODUCT 
 	Route::resource('/products', ProductController::class);

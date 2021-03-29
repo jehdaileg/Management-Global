@@ -128,7 +128,7 @@
             
             <div class="col-sm-4">
               <select class="form-control">
-                <option>Select Size</option>
+                <option v-for="(size, index) in sizes" :key="index" value="size.id">{{ size.name }}</option>
               </select>
             </div>
 
@@ -169,6 +169,7 @@ import store from '../../store'
 import * as actions from '../../store/action-types' 
 
 import { mapGetters } from 'vuex'
+
 
 import Select2 from 'v-select2-component'
 
@@ -221,7 +222,9 @@ export default {
 
       'categories' : 'getCategories',
 
-      'brands' : 'getBrands'
+      'brands' : 'getBrands',
+
+      'sizes'  : 'getSizes'
 
 
     })
@@ -233,7 +236,9 @@ export default {
 
     store.dispatch(actions.GET_CATEGORIES),
 
-    store.dispatch(actions.GET_BRANDS)
+    store.dispatch(actions.GET_BRANDS),
+
+    store.dispatch(actions.GET_SIZES)
 
   }
 

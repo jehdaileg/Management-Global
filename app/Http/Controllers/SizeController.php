@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Size;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SizeController extends Controller
 {
@@ -125,5 +126,21 @@ class SizeController extends Controller
         flash('Size Supprime avec Success')->success();
 
         return back();
+    }
+
+    //AJAX Request to get datas in JSON format 
+
+    public function getSizesJson()
+    {
+
+        $sizes = Size::all();
+
+        return response()->json([
+
+            'success'=>true,
+
+            'data'=>$sizes
+
+        ], Response::HTTP_OK);
     }
 }
