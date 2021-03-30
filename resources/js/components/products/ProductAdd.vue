@@ -124,27 +124,28 @@
 
         <div class="card-body">
 
-          <div class="row">
-            
+          <div class="row" v-for="(item, index) in form.items" :key="index">
+
             <div class="col-sm-4">
-              <select class="form-control">
-                <option v-for="(size, index) in sizes" :key="index" value="size.id">{{ size.name }}</option>
+              <select class="form-control" v-model="item.size_id">
+                <option value="">Select size</option>
+                <option v-for="(size, index) in sizes" :key="index" :value="size.id">{{ size.name }}</option>
               </select>
             </div>
 
             <div class="col-sm-3">
-              <input type="text" class="form-control" placeholder="Location...">
+              <input type="text" v-model="item.location" class="form-control" placeholder="Location...">
             </div>
 
             <div class="col-sm-3">
-              <input type="number" class="form-control" placeholder="Quantity...">
+              <input type="number" class="form-control" v-model="item.quantity" placeholder="Quantity...">
             </div>
 
             <div class="col-sm-2">
               <button type="button " class="btn-danger btn-sm"><i class="fa fa-trash"></i></button>
             </div>
 
-           &nbsp; &nbsp; <button class="btn btn-primary mt-3"><i class="fa fa-plus"></i> Ajouter</button>
+            &nbsp; &nbsp; <button class="btn btn-primary mt-3"><i class="fa fa-plus"></i> Ajouter</button>
 
           </div>
 
@@ -207,8 +208,22 @@ export default {
 
         description : '',
 
-        status : 1
+        status : 1,
 
+        items : [
+
+        {
+
+          size_id : '',
+
+          location : '',
+
+          quantity : 0 
+
+        }
+
+
+        ]
 
       }
 

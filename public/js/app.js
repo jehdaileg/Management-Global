@@ -2054,6 +2054,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -2074,7 +2075,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         retail_price: 0,
         year: '',
         description: '',
-        status: 1
+        status: 1,
+        items: [{
+          size_id: '',
+          location: '',
+          quantity: 0
+        }]
       }
     };
   },
@@ -45658,32 +45664,116 @@ var render = function() {
       _c("div", { staticClass: "card card-default" }, [
         _vm._m(12),
         _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-4" }, [
-              _c(
-                "select",
-                { staticClass: "form-control" },
-                _vm._l(_vm.sizes, function(size, index) {
-                  return _c(
-                    "option",
-                    { key: index, attrs: { value: "size.id" } },
-                    [_vm._v(_vm._s(size.name))]
-                  )
-                }),
-                0
-              )
-            ]),
-            _vm._v(" "),
-            _vm._m(13),
-            _vm._v(" "),
-            _vm._m(14),
-            _vm._v(" "),
-            _vm._m(15),
-            _vm._v("\n\n             "),
-            _vm._m(16)
-          ])
-        ])
+        _c(
+          "div",
+          { staticClass: "card-body" },
+          _vm._l(_vm.form.items, function(item, index) {
+            return _c("div", { key: index, staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-4" }, [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: item.size_id,
+                        expression: "item.size_id"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          item,
+                          "size_id",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "" } }, [
+                      _vm._v("Select size")
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.sizes, function(size, index) {
+                      return _c(
+                        "option",
+                        { key: index, domProps: { value: size.id } },
+                        [_vm._v(_vm._s(size.name))]
+                      )
+                    })
+                  ],
+                  2
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-3" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: item.location,
+                      expression: "item.location"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Location..." },
+                  domProps: { value: item.location },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "location", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-3" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: item.quantity,
+                      expression: "item.quantity"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "number", placeholder: "Quantity..." },
+                  domProps: { value: item.quantity },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "quantity", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _vm._m(13, true),
+              _vm._v("\n\n              "),
+              _vm._m(14, true)
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -45819,28 +45909,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h3", { staticClass: "card-title" }, [_vm._v("Product Size")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-3" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Location..." }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-3" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "number", placeholder: "Quantity..." }
-      })
     ])
   },
   function() {
