@@ -7,7 +7,7 @@
 	<!-- general form elements -->
 	<div class="card card-default">
 		<div class="card-header">
-			<h3 class="card-title">Liste des Produits</h3><br>
+			<h3 class="card-title">Liste des Products</h3><br>
 
 			<a href="{{ route('products.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter</a>
 
