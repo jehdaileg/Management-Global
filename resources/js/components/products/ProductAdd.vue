@@ -1,6 +1,9 @@
 <template>
 
 
+  <form role="form" @submit.prevent="SubmitForm">
+
+
   <div class="row">
 
     <div class="col-sm-6">
@@ -11,7 +14,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="" method="">
+        
 
           <div class="card-body">
             <div class="form-group">
@@ -109,7 +112,7 @@
             </div>
 
           </div>
-        </form>
+        
       </div>
 
 
@@ -142,10 +145,10 @@
             </div>
 
             <div class="col-sm-2">
-              <button type="button " class="btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+              <button type="button" @click="deleteItem(index)" class="btn-danger btn-sm"><i class="fa fa-trash"></i></button>
             </div>
 
-            &nbsp; &nbsp; <button class="btn btn-primary mt-3"><i class="fa fa-plus"></i> Ajouter</button>
+            &nbsp; &nbsp; <button @click="addItem" class="btn btn-primary mt-3 mb-1"><i class="fa fa-plus"></i> Ajouter</button>
 
           </div>
 
@@ -158,7 +161,7 @@
     
   </div>
 
-  
+  </form>
 
 
 </template>
@@ -255,7 +258,45 @@ export default {
 
     store.dispatch(actions.GET_SIZES)
 
+  },
+
+  methods : {
+
+    addItem(){
+
+      let item = {
+
+          size_id : '',
+
+          location : '',
+
+          quantity : 0 
+
+      }
+
+      this.form.items.push(item)
+
+    },
+
+    deleteItem(index){
+
+      this.form.items.splice(index, 1)
+
+    },
+
+    SubmitForm(){
+
+      console.log(this.form)
+
+
+    }
+
+
   }
+
+
+
+
 
 
 
