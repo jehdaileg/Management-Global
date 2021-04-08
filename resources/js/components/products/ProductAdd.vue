@@ -266,27 +266,27 @@ export default {
 
       let item = {
 
-          size_id : '',
+         size_id : '',
 
           location : '',
 
           quantity : 0 
 
       }
-
-      this.form.items.push(item)
-
+       this.form.items.push(item)
     },
+
 
     deleteItem(index){
 
       this.form.items.splice(index, 1)
 
+
     },
 
     SubmitForm(){
 
-      console.log(this.form)
+      
 
 
     }

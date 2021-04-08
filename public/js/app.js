@@ -2107,9 +2107,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     deleteItem: function deleteItem(index) {
       this.form.items.splice(index, 1);
     },
-    SubmitForm: function SubmitForm() {
-      console.log(this.form);
-    }
+    SubmitForm: function SubmitForm() {}
   }
 });
 
