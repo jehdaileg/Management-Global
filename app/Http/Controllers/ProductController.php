@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -40,7 +42,47 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $validate = Validator::make($request->all(), [
+
+            'category_id' => 'required|numeric',
+
+            'brand_id' => 'required|numeric',
+
+            'sku' => 'required|string|max:100|unique:products',
+
+            'name' => 'required|string|max:100|unique:products',
+
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:1024',
+
+            'cost_price' => 'required|numeric',
+
+            'retail_price' => 'required|numeric',
+
+            'year' => 'required',
+
+            'description' => 'required|string',
+
+            'status' => 'required|numeric'
+
+       ]);
+
+       //Getting erors if validation failed 
+       
+       if($validate->fails()){
+
+        return response()->json([
+
+            'success' =>false,
+
+            'errors'  =>$validate->errors()
+
+        ], Response::HTTP_UNPROCESSABLE_ENTITY);
+
+
+       }
+
+      return  $request->all();
+
     }
 
     /**

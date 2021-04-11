@@ -1,3 +1,7 @@
+//ERRORS 
+
+export const SET_ERRORS = 'SET_ERRORS'
+
 //CATEGORIES {--Mutations--}
 
 export const SET_CATEGORIES = 'SET_CATEGORIES'
