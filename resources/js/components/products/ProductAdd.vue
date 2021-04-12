@@ -2,9 +2,12 @@
 
 
   <form role="form" @submit.prevent="SubmitForm">
-
+    
+   <show-Error></show-Error>
 
     <div class="row">
+
+     
 
       <div class="col-sm-6">
 
@@ -177,12 +180,16 @@ import { mapGetters } from 'vuex'
 
 import Select2 from 'v-select2-component'
 
+import ShowError from '../utils/ShowError'
+
 export default {
 
 
   components : {
 
-    Select2
+    Select2,
+
+    ShowError
 
 
   },
